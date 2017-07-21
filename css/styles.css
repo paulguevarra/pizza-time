@@ -1,0 +1,35 @@
+.order{
+  display: none;
+}
+.jumbotron h1{
+  font-family: 'Fredericka the great', cursive;
+  color: #fff;
+}
+.jumbotron{
+  margin: 2em auto;
+  padding:1.5em;
+  border-radius: 1em;
+  background-color: #2C2C2C;
+  text-align: center;
+}
+.jumbotron h3{
+  font-family: 'Amatic SC', cursive;
+  color: #808080;
+}
+body, html {
+  height: 100%;
+}
+.main{
+  background-image: url("pizzabackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+.pizza-sheet{
+  background-color: #D1D0CB;
+  margin: auto;
+  padding: 2em;
+  width: 80%
+
+}

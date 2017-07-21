@@ -15,9 +15,9 @@ Pizza.prototype.meatOptions = function (meat) {
 Pizza.prototype.pizzaCost = function (){
   var pieCost = 0;
   if (this.pizzaSize === "small") {
-    pieCost = 8;
+    pieCost = 9;
   } else if (this.pizzaSize === "medium") {
-    pieCost = 10;
+    pieCost = 11;
   } else if (this.pizzaSize === "large") {
     pieCost = 13;
   } else if (this.pizzaSize === "Extra Large") {
@@ -51,8 +51,12 @@ $(document).ready(function(){
   });
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-console.log(newPizza);
-alert(newPizza.pizzaCost())
+    $(".pizza-size").append("Size: " + newPizza.pizzaSize);
+    $(".cheese").append("Cheese: " + newPizza.cheese);
+    $(".veggie-toppings").append("With: " + newPizza.veggies);
+    $(".meat-toppings").append(newPizza.meats);
+    $(".pizza-total").append(newPizza.pizzaCost())
+    $(".order").show();
   })
 
 
