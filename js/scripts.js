@@ -7,10 +7,10 @@ function Pizza(size, cheese, cheeseType) {
   this.meats = [];
 }
 Pizza.prototype.vegOptions = function (veg) {
-  this.vegToppings.push(veggie);
+  this.veggies.push(veg);
 }
 Pizza.prototype.meatOptions = function (meat) {
-  this.meatToppings.push(meat);
+  this.meats.push(meat);
 }
 Pizza.prototype.pizzaCost = function (){
   var pieCost = 0;
@@ -23,11 +23,17 @@ Pizza.prototype.pizzaCost = function (){
   } else if (this.pizzaSize === "Extra Large") {
     pieCost = 15;
   }
+  if (this.cheese === "no") {
+    pieCost -=1;
+    this.cheeseType = 'cheese';
+  } else if (this.cheese === 'extra') {
+    pieCost += 1;
+  }
   this.veggies.forEach(function () {
-    cost += 1;
+    pieCost += 1;
   });
   this.meats.forEach(function () {
-    cost += 1;
+    pieCost += 1;
   });
   return pieCost;
 };
@@ -35,11 +41,18 @@ Pizza.prototype.pizzaCost = function (){
 $(document).ready(function(){
   var inputCheese = $('input[name="cheese"]:checked').val();
   var inputPizzaSize = $('input[name="pizza-size"]:checked').val();
-  var inputCheeseType = $('input[name="pizza-size"]:checked').val();
+  var inputCheeseType = $('input[name="cheese-type"]:checked').val();
   var newPizza = new Pizza(inputPizzaSize, inputCheese, inputCheeseType);
+  $("input:checkbox[name=veggie-type]:checked").each(function(){
+    newPizza.vegOptions($(this).val());
+  });
+  $('input[name="meat-type"]:checked').each(function(){
+    newPizza.meatOptions($(this).val());
+  });
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
 console.log(newPizza);
+alert(newPizza.pizzaCost())
   })
 
 
