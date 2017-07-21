@@ -1,22 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/bootsrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.2.1.js" charset="utf-8"></script>
-    <script src="js/scripts.js" charset="utf-8"></script>
-    <title>Pizza Time</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizzzza Time</title>
   </head>
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Pizzzza Time</h1>
-      <h3>The only thing catching z's is our logo</h3>
-    </div>
-    <div class="container">
-
-    </div>
-  </div>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Pizzzza Time</h1>
+        <h3>The only thing catching z's is our logo</h3>
+      </div>
+      <div class="container">
+        <div class="opener">
 
+        </div>
+        <div class="container pizza-sheet">
+          <h2>Enter your pizza order below:</h2>
+          <form id="pizza-order">
+            <div class="form-group">
+              <h4>Pizza Size:</h4>
+              <input type="radio" name="pizza-size" value="small" id="smallpizza"><label for="smallpizza">Small</label>
+              <input type="radio" name="pizza-size" value="medium" id="mediumpizza"><label for="mediumpizza">Medium</label>
+              <input type="radio" name="pizza-size" value="large" id="largepizza"><label for="largepizza">Large</label>
+              <input type="radio" name="pizza-size" value="extraLarge" id="xlpizza"><label for="xlpizza">Extra Large</label>
+            </div>
+            <div class="form-group">
+              <h4>Cheese:</h4>
+              <label><input type="radio" name="cheese-type" value="none">No Cheese</label>
+              <label><input type="radio" name="cheese-type" value="regular">Regular</label>
+              <label><input type="radio" name="cheese-type" value="extra">Extra Cheese</label>
+            </div>
+            <div class="form-group">
+              <h4>Select your meats:</h4>
+              <label><input type="checkbox" name="meat-type" value="pepperoni">Pepperoni</label>
+              <label><input type="checkbox" name="meat-type" value="bacon">Bacon</label>
+              <label><input type="checkbox" name="meat-type" value="sausage">Sausage</label>
+              <label><input type="checkbox" name="meat-type" value="ham">Ham</label>
+              <label><input type="checkbox" name="meat-type" value="chicken">Chicken</label>
+              <label><input type="checkbox" name="meat-type" value="capicolo">Capicollo</label>
+              <label><input type="checkbox" name="meat-type" value="chorizo">Chorizo</label>
+              <label><input type="checkbox" name="meat-type" value="anchovies">Anchovies</label>
+              <label><input type="checkbox" name="meat-type" value="salami">Salami</label>
+            </div>
+            <div class="form-group">
+              <h4>Select your meats:</h4>
+              <label><input type="checkbox" name="veggie-type" value="tomatoes">Tomatoes</label>
+              <label><input type="checkbox" name="veggie-type" value="onions">Onions</label>
+              <label><input type="checkbox" name="veggie-type" value="pineapple">Pineapple</label>
+              <label><input type="checkbox" name="veggie-type" value="olives">Olives</label>
+              <label><input type="checkbox" name="veggie-type" value="spinach">Spinach</label>
+              <label><input type="checkbox" name="veggie-type" value="mushrooms">Mushrooms</label>
+              <label><input type="checkbox" name="veggie-type" value="jalapenos">Jalapenos</label>
+            </div>
+            <button type="sumbit" class="button btn btn-success">Submit</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
