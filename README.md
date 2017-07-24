@@ -14,6 +14,8 @@ This webpage creates an interface that allows the ordering a pizza with various 
 * Open in your editor
 
 ## Specifications
+Behavior                                                          | Input  | Output
+----------------------------------------------------------------- | ------ | ------
 | When a topping is inputted the website is able to save and return the value	| [*Pepperoni...]  | "Your toppings: Pepperoni  ..." |
 | When toppings are selected the website is able to return the value	| [Cheese][Pepperoni]  | "Your toppings: Cheese & Pepperoni" |
 | Multiple sizes are available |  large | "Your Pizza: Large, Cheese & Pepperoni" |
