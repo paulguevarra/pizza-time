@@ -51,9 +51,9 @@ $(document).ready(function(){
   });
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-    $(".pizza-size").text("Size: " + newPizza.pizzaSize);
-    $(".cheese").text("Cheese: " + newPizza.cheese);
-    $(".veggie-toppings").text("With: " + newPizza.veggies);
+    $(".pizza-size").text(newPizza.pizzaSize);
+    $(".cheese").text(newPizza.cheese);
+    $(".veggie-toppings").text(newPizza.veggies);
     $(".meat-toppings").text(newPizza.meats);
     $(".pizza-total").text(newPizza.pizzaCost());
     $(".order").show();
