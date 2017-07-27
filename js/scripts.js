@@ -25,7 +25,7 @@ Pizza.prototype.pizzaCost = function (){
   }
   if (this.cheese === "no") {
     pieCost -=1;
-    this.cheeseType = 'cheese';
+    return this.cheeseType = 'cheese';
   } else if (this.cheese === 'extra') {
     pieCost += 1;
   }
@@ -39,14 +39,14 @@ Pizza.prototype.pizzaCost = function (){
 };
 
 $(document).ready(function(){
-  var inputCheese = $('input[name="cheese"]:checked').val();
-  var inputPizzaSize = $('input[name="pizza-size"]:checked').val();
-  var inputCheeseType = $('input[name="cheese-type"]:checked').val();
+  var inputCheese = $('input:radio[name="cheese"]:checked').val();
+  var inputPizzaSize = $('input:radio[name="pizza-size"]:checked').val();
+  var inputCheeseType = $('input:radio[name="cheese-type"]:checked').val();
   var newPizza = new Pizza(inputPizzaSize, inputCheese, inputCheeseType);
   $("input:checkbox[name=veggie-type]:checked").each(function(){
     newPizza.vegOptions($(this).val());
   });
-  $('input[name="meat-type"]:checked').each(function(){
+  $('input:checkbox[name="meat-type"]:checked').each(function(){
     newPizza.meatOptions($(this).val());
   });
   $("form#pizza-order").submit(function(event) {
@@ -57,8 +57,13 @@ $(document).ready(function(){
     $(".meat-toppings").append(newPizza.meats);
     $(".pizza-total").append(newPizza.pizzaCost())
     $(".order").show();
-  })
-
+  });
+  $(".reset").click(function(event){
+    event.preventDefault();
+    $('input[type=checkbox]').each(function() {this.checked=false});
+    $('input[type=radio]').each(function() {this.checked=false});
+    $(".order").hide();
+  });
 
 
 
