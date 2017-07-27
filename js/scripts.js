@@ -39,14 +39,14 @@ Pizza.prototype.pizzaCost = function (){
 };
 
 $(document).ready(function(){
-  var inputCheese = $('input:radio[name="cheese"]:checked').val();
-  var inputPizzaSize = $('input:radio[name="pizza-size"]:checked').val();
-  var inputCheeseType = $('input:radio[name="cheese-type"]:checked').val();
+  var inputCheese = $('.cheese:checked').val();
+  var inputPizzaSize = $('.pizza-size:checked').val();
+  var inputCheeseType = $('.cheese-type:checked').val();
   var newPizza = new Pizza(inputPizzaSize, inputCheese, inputCheeseType);
-  $("input:checkbox[name=veggie-type]:checked").each(function(){
+  $(".veggie-type:checked").each(function(){
     newPizza.vegOptions($(this).val());
   });
-  $('input:checkbox[name="meat-type"]:checked').each(function(){
+  $('.meat-type:checked').each(function(){
     newPizza.meatOptions($(this).val());
   });
   $("form#pizza-order").submit(function(event) {
